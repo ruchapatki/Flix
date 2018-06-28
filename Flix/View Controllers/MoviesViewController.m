@@ -83,7 +83,7 @@
             //refreshes, will call numberOfRowsInSection again
             [self.tableView reloadData];
             // Stop the activity indicator
-            // Hides automatically if "Hides When Stopped" is enabled
+            // Hides automatically since "Hides When Stopped" is enabled
             [self.activityIndicator stopAnimating];
             
         }
