@@ -17,14 +17,30 @@
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end
 
 @implementation MoviesViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    // Start the activity indicator
+    [self.activityIndicator startAnimating];
+}
+
+- (void)viewDidAppear:(BOOL)animatedP{
+    [super viewDidAppear:YES];
+    //TODO: Fix this!!!
+    // Stop the activity indicator
+    // Hides automatically if "Hides When Stopped" is enabled
+    [self.activityIndicator stopAnimating];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     
     self.tableView.dataSource = self;
