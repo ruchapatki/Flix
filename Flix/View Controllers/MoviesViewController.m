@@ -82,7 +82,6 @@
             
             //refreshes, will call numberOfRowsInSection again
             [self.tableView reloadData];
-//            self.filteredData = self.movies;
             // Stop the activity indicator
             // Hides automatically since "Hides When Stopped" is enabled
             [self.activityIndicator stopAnimating];
@@ -99,7 +98,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.movies.count;
     return self.filteredData.count;
 }
 
@@ -144,6 +142,9 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.filteredData = self.movies;
+    [self.tableView reloadData];
+    
     self.searchBar.showsCancelButton = NO;
     self.searchBar.text = @"";
     [self.searchBar resignFirstResponder];
@@ -159,7 +160,7 @@
     
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     
     //passing over movie that was tapped to the destination view controller
     DetailsViewController *detailsViewController = [segue destinationViewController];
