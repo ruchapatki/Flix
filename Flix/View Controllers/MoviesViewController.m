@@ -11,7 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h";
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 //creates private variable _movies, getter, setter
 @property (nonatomic, strong) NSArray *movies;
@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *filteredData;
 
 @end
 
@@ -34,6 +36,8 @@
     self.tableView.delegate = self;
 
     [self fetchMovies];
+    self.searchBar.delegate = self;
+    self.filteredData = self.movies;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
@@ -71,12 +75,14 @@
             NSLog(@"%@", dataDictionary);
             
             self.movies = dataDictionary[@"results"];
+            self.filteredData = self.movies;
             for(NSDictionary *movie in self.movies){
                 NSLog(@"%@", movie[@"title"]);
             }
             
             //refreshes, will call numberOfRowsInSection again
             [self.tableView reloadData];
+//            self.filteredData = self.movies;
             // Stop the activity indicator
             // Hides automatically since "Hides When Stopped" is enabled
             [self.activityIndicator stopAnimating];
@@ -93,14 +99,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.movies.count;
+//    return self.movies.count;
+    return self.filteredData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //indexpath has rows and sections
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
     
@@ -112,6 +119,34 @@
     [cell.posterView setImageWithURL:posterURL];
     
     return cell;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length != 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *item, NSDictionary *bindings) {
+            return [item[@"title"] containsString:searchText];
+        }];
+
+        self.filteredData = [self.movies filteredArrayUsingPredicate:predicate];
+
+        NSLog(@"%@", self.filteredData);
+
+    }
+    else {
+        self.filteredData = self.movies;
+    }
+
+    [self.tableView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
 }
 
 
