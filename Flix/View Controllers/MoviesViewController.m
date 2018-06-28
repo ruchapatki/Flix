@@ -30,11 +30,6 @@
     [self.activityIndicator startAnimating];
 }
 
-//- (void)viewDidAppear:(BOOL)animatedP{
-//    [super viewDidAppear:YES];
-//    //TODO: Fix this!!!
-//
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
