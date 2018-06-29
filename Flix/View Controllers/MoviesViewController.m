@@ -73,9 +73,6 @@
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             self.movies = dataDictionary[@"results"];
             self.filteredData = self.movies;
-//            for(NSDictionary *movie in self.movies){
-//                NSLog(@"%@", movie[@"title"]);
-//            }
             
             //refreshes, will call numberOfRowsInSection again
             [self.tableView reloadData];
@@ -113,6 +110,7 @@
     NSURL *url = [NSURL URLWithString:fullPosterURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    //Images fade in as they're loading
     __weak MovieCell *weakSelf = cell;
     [cell.posterView setImageWithURLRequest:request placeholderImage:nil
                                     success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
@@ -137,6 +135,7 @@
                                         // do something for the failure condition
                                     }];
     
+    //customizing selection effect of the cell
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     UIView *backgroundView = [[UIView alloc] init];
     

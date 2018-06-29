@@ -37,6 +37,7 @@
     NSString *baseHighRes = @"https://image.tmdb.org/t/p/original";
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     
+    //Loading low resolution image first, switch to high resolution image when done
     NSString *lowFull = [baseLowRes stringByAppendingString:backdropURLString];
     NSString *highFull = [baseHighRes stringByAppendingString:backdropURLString];
     
