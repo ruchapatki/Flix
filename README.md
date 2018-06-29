@@ -2,7 +2,7 @@
 
 Flix is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: 7 hours spent in total
+Time spent: 8 hours spent in total
 
 ## User Stories
 
@@ -33,24 +33,22 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Wrapping the text for the title and other design elements
+2. Adding gesture recognizers to a certain area rather than an element
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/5FVBf7h.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The most difficult part of building this app was parsing the response from the API when fetching the trailer link. To fix this, I printed out each stage to figure out the types of various variables. Another difficult aspect of this app was implementing the search bar. To get the predicate function to work as expected, I had to make various tweaks to the textDidChange function. 
 
 ## Credits
-
-List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
