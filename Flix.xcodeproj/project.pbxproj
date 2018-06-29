@@ -12,7 +12,6 @@
 		93D5451495D5BBA5D491AE43 /* libPods-FlixUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64738F272215900312884050 /* libPods-FlixUITests.a */; };
 		957352AC20E55B2600BFE339 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957352AB20E55B2600BFE339 /* MoviesGridViewController.m */; };
 		957352AF20E55D4F00BFE339 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957352AE20E55D4F00BFE339 /* MovieCollectionCell.m */; };
-		957352B220E5791A00BFE339 /* SuperheroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957352B120E5791A00BFE339 /* SuperheroDetailViewController.m */; };
 		957352B520E59E0100BFE339 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957352B420E59E0100BFE339 /* TrailerViewController.m */; };
 		957352B720E5A2C200BFE339 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957352B620E5A2C200BFE339 /* WebKit.framework */; };
 		95B7BEAF20E409EE00FCE4BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B7BEAE20E409EE00FCE4BC /* AppDelegate.m */; };
@@ -53,8 +52,6 @@
 		957352AB20E55B2600BFE339 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		957352AD20E55D4F00BFE339 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
 		957352AE20E55D4F00BFE339 /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
-		957352B020E5791A00BFE339 /* SuperheroDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperheroDetailViewController.h; sourceTree = "<group>"; };
-		957352B120E5791A00BFE339 /* SuperheroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperheroDetailViewController.m; sourceTree = "<group>"; };
 		957352B320E59E0100BFE339 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
 		957352B420E59E0100BFE339 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		957352B620E5A2C200BFE339 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -204,8 +201,6 @@
 				95B7BEE920E4607200FCE4BC /* DetailsViewController.m */,
 				957352AA20E55B2600BFE339 /* MoviesGridViewController.h */,
 				957352AB20E55B2600BFE339 /* MoviesGridViewController.m */,
-				957352B020E5791A00BFE339 /* SuperheroDetailViewController.h */,
-				957352B120E5791A00BFE339 /* SuperheroDetailViewController.m */,
 				957352B320E59E0100BFE339 /* TrailerViewController.h */,
 				957352B420E59E0100BFE339 /* TrailerViewController.m */,
 			);
@@ -421,7 +416,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B7BEBD20E409F000FCE4BC /* main.m in Sources */,
-				957352B220E5791A00BFE339 /* SuperheroDetailViewController.m in Sources */,
 				95B7BEEA20E4607200FCE4BC /* DetailsViewController.m in Sources */,
 				95B7BEAF20E409EE00FCE4BC /* AppDelegate.m in Sources */,
 				957352AF20E55D4F00BFE339 /* MovieCollectionCell.m in Sources */,

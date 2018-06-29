@@ -132,7 +132,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="EFh-k0-dw3" id="ZG9-Kz-qil"/>
-                                            <segue destination="tlH-Vx-reA" kind="show" id="dfH-of-Fez"/>
+                                            <segue destination="UcB-lJ-Hlh" kind="show" id="uKV-Rk-IbR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -213,7 +213,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="310" y="1559"/>
+            <point key="canvasLocation" x="966" y="1583"/>
         </scene>
         <!--Trailer View Controller-->
         <scene sceneID="42j-Js-wMy">
@@ -250,59 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mw5-yM-INc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="2304"/>
-        </scene>
-        <!--Superhero Detail View Controller-->
-        <scene sceneID="DPJ-Sr-VK2">
-            <objects>
-                <viewController id="tlH-Vx-reA" customClass="SuperheroDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UWU-sE-lAN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAh-qn-GdZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIz-OE-vSa">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="281"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-4o-nLG">
-                                        <rect key="frame" x="8" y="130" width="113" height="165"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVS-ya-lza">
-                                        <rect key="frame" x="138" y="238" width="229" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al6-J0-5rE">
-                                        <rect key="frame" x="8" y="315" width="359" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="0HV-nJ-oU8"/>
-                    </view>
-                    <connections>
-                        <outlet property="backgroundView" destination="EIz-OE-vSa" id="TFZ-JY-jT7"/>
-                        <outlet property="posterView" destination="rcT-4o-nLG" id="rT6-QK-lMJ"/>
-                        <outlet property="synopsisLabel" destination="al6-J0-5rE" id="L5x-6l-zSB"/>
-                        <outlet property="titleLabel" destination="pVS-ya-lza" id="Hxh-zc-Zb5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cFC-U5-uzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="1557.5712143928038"/>
+            <point key="canvasLocation" x="966" y="2323"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kN5-Yi-uyM">
@@ -363,4 +311,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uKV-Rk-IbR"/>
+    </inferredMetricsTieBreakers>
 </document>

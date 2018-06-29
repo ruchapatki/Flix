@@ -9,7 +9,7 @@
 #import "MoviesGridViewController.h"
 #import "MovieCollectionCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "SuperheroDetailViewController.h"
+#import "DetailsViewController.h"
 
 @interface MoviesGridViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
@@ -110,7 +110,7 @@
     NSDictionary *movie = self.filteredData[indexPath.item];
     
     //passing over movie that was tapped to the destination view controller
-    SuperheroDetailViewController *detailsViewController = [segue destinationViewController];
+    DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
     
 }
@@ -124,8 +124,6 @@
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     
     NSURL *url = [NSURL URLWithString:fullPosterURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -154,7 +152,6 @@
                                         // do something for the failure condition
                                     }];
     
-//    [cell.posterView setImageWithURL:posterURL];
     return cell;
 }
 
