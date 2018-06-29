@@ -197,10 +197,10 @@
 			children = (
 				95B7BEDF20E4120F00FCE4BC /* MoviesViewController.h */,
 				95B7BEE020E4120F00FCE4BC /* MoviesViewController.m */,
-				95B7BEE820E4607200FCE4BC /* DetailsViewController.h */,
-				95B7BEE920E4607200FCE4BC /* DetailsViewController.m */,
 				957352AA20E55B2600BFE339 /* MoviesGridViewController.h */,
 				957352AB20E55B2600BFE339 /* MoviesGridViewController.m */,
+				95B7BEE820E4607200FCE4BC /* DetailsViewController.h */,
+				95B7BEE920E4607200FCE4BC /* DetailsViewController.m */,
 				957352B320E59E0100BFE339 /* TrailerViewController.h */,
 				957352B420E59E0100BFE339 /* TrailerViewController.m */,
 			);
