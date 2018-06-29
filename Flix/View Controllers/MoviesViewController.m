@@ -137,6 +137,17 @@
                                         // do something for the failure condition
                                     }];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    UIView *backgroundView = [[UIView alloc] init];
+    
+    UIColor *myColor = [UIColor colorWithRed: 1
+                    green:0
+                     blue:0
+                    alpha:0.3f];
+    
+    backgroundView.backgroundColor = myColor;
+    cell.selectedBackgroundView = backgroundView;
+    
     return cell;
 }
 
