@@ -42,6 +42,9 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    //change back arrow and title to white
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
 }
 
 - (void)fetchMovies {
@@ -110,7 +113,7 @@
     NSURL *url = [NSURL URLWithString:fullPosterURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    //Images fade in as they're loading
+    //images fade in as they're loading
     __weak MovieCell *weakSelf = cell;
     [cell.posterView setImageWithURLRequest:request placeholderImage:nil
                                     success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {

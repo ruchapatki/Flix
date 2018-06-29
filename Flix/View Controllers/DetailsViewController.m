@@ -24,20 +24,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    //poster images
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [self.posterView setImageWithURL:posterURL];
     
-    //backdrop label
+    //backdrop images
     NSString *baseLowRes = @"https://image.tmdb.org/t/p/w45";
     NSString *baseHighRes = @"https://image.tmdb.org/t/p/original";
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     
-    //Loading low resolution image first, switch to high resolution image when done
+    //loading low resolution image first, switch to high resolution image when done
     NSString *lowFull = [baseLowRes stringByAppendingString:backdropURLString];
     NSString *highFull = [baseHighRes stringByAppendingString:backdropURLString];
     
@@ -88,7 +88,7 @@
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
     
-    //scoll height
+    //make scroll go all the way to bottom of synopsis
     CGFloat maxHeight = self.synopsisLabel.frame.origin.y + self.synopsisLabel.frame.size.height + 20;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
     
@@ -96,10 +96,10 @@
     // Here we use the method didPan(sender:), which we defined in the previous step, as the action.
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
     
-    // Optionally set the number of required taps, e.g., 2 for a double click
+    // Optionally setting the number of required taps, e.g., 2 for a double click
     tapGestureRecognizer.numberOfTapsRequired = 1;
     
-    // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
+    // Attached to view of choice: posterView (user interaction is enabled)
     [self.posterView setUserInteractionEnabled:YES];
     [self.posterView addGestureRecognizer:tapGestureRecognizer];
 }

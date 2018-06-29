@@ -38,12 +38,13 @@
     self.searchBar.delegate = self;
     self.filteredData = self.movies;
     
+    //set refresh control at the top of the screen
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.collectionView insertSubview:self.refreshControl atIndex:0];
     
+    //collection view layout, spacing
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
-    
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
     
@@ -51,6 +52,9 @@
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing*(postersPerLine - 1))/postersPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
+    //change back arrow and title to white
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,6 +132,7 @@
     NSURL *url = [NSURL URLWithString:fullPosterURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    //images fade in as they are loading
     __weak MovieCollectionCell *weakSelf = cell;
     [cell.posterView setImageWithURLRequest:request placeholderImage:nil
                                     success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
@@ -161,12 +166,11 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if (searchText.length != 0) {
+        //predicate function returns true if the movie title contains the text in the searchbar
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *item, NSDictionary *bindings) {
             return [item[@"title"] containsString:searchText];
         }];
-        
         self.filteredData = [self.movies filteredArrayUsingPredicate:predicate];
-  
     }
     else {
         self.filteredData = self.movies;
@@ -180,6 +184,7 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    //if cancel clicked, then acts as if all text deleted
     self.filteredData = self.movies;
     [self.collectionView reloadData];
     
