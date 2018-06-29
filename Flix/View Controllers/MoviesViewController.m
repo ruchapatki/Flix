@@ -71,14 +71,11 @@
         else {
             
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            
-            NSLog(@"%@", dataDictionary);
-            
             self.movies = dataDictionary[@"results"];
             self.filteredData = self.movies;
-            for(NSDictionary *movie in self.movies){
-                NSLog(@"%@", movie[@"title"]);
-            }
+//            for(NSDictionary *movie in self.movies){
+//                NSLog(@"%@", movie[@"title"]);
+//            }
             
             //refreshes, will call numberOfRowsInSection again
             [self.tableView reloadData];
@@ -122,7 +119,7 @@
                                         
                                         // imageResponse will be nil if the image is cached
                                         if (imageResponse) {
-                                            NSLog(@"Image was NOT cached, fade in image");
+                                            //image not cached: fade in
                                             weakSelf.posterView.alpha = 0.0;
                                             weakSelf.posterView.image = image;
                                             
@@ -132,7 +129,7 @@
                                             }];
                                         }
                                         else {
-                                            NSLog(@"Image was cached so just update the image");
+                                            //image cached: just update
                                             weakSelf.posterView.image = image;
                                         }
                                     }
@@ -150,9 +147,6 @@
         }];
 
         self.filteredData = [self.movies filteredArrayUsingPredicate:predicate];
-
-        NSLog(@"%@", self.filteredData);
-
     }
     else {
         self.filteredData = self.movies;
