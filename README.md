@@ -38,7 +38,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-[Here](https://i.imgur.com/u4ihnik.gif) is a walkthrough of implemented user stories (GIF too long to embed).
+[Here](https://i.imgur.com/u4ihnik.gif) is a walkthrough of implemented user stories (displayed below in parts):
+<img src='https://i.imgur.com/HK7N1ud.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/Dnl3pUV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/vbr1tSo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
