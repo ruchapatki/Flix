@@ -79,7 +79,9 @@
             // possibly try to get the large image
     }];
     
-    
+    //add border to poster images
+    [self.posterView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
+    [self.posterView.layer setBorderWidth: 2.0];
     
     
     //title and synopsis labels
