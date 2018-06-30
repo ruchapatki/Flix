@@ -20,13 +20,11 @@
     [self showVideo];
 }
 
-- (NSString*)showVideo{
+- (void)showVideo{
     
     NSString *baseURLString = @"https://www.youtube.com/watch?v=";
     NSString *identity = self.movie[@"id"];
     NSLog(@"IDENTITY / MOVIE ID: %@", identity);
-    
-    NSMutableString *myReturn = [NSMutableString stringWithString:@""];
     
     NSMutableString* myUrl = [NSMutableString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US", identity];
     
@@ -69,7 +67,6 @@
         }
     }];
     [task resume];
-    return myReturn;
 }
 
 - (void)didReceiveMemoryWarning {

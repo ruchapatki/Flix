@@ -34,7 +34,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-
+    
+    [self.activityIndicator startAnimating];
     [self fetchMovies];
     self.searchBar.delegate = self;
     self.filteredData = self.movies;
@@ -48,7 +49,7 @@
 }
 
 - (void)fetchMovies {
-    [self.activityIndicator startAnimating];
+    
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
